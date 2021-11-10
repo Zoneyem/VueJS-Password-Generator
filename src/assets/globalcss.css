@@ -1,0 +1,20 @@
+*,
+*::after,
+*::before{
+    box-sizing: border-box;
+    margin: 0 auto;
+    
+}
+body{
+    background-color: #0F0A0A;
+    font-family: 'Arvo', serif;
+}
+
+p{
+    color:#F5EFED;
+    font-size: 18px;
+}
+
+h6{
+    color: #F5EFED;
+}
