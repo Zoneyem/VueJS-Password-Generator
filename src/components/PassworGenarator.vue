@@ -8,28 +8,34 @@
 
 <form action="" class="form_wrapper">
     
-<input type="text" value="copy" id="myCopy"> 
-<button class="copy-to-clipboard">Copy to Clipboard 📋 </button>
+<input type=""  id="myCopy" minlength="8" pattern="/[a-z]{8,}/" required v-model="password"> 
+<button class="copy-to-clipboard">{{copy}}  </button>
 </form>
+
 <br>
 <br>
-<p>Choose your Character set:</p>
+<p>{{choose}}</p>
 
 <div class="button-wrapper">
     <div class="button-row">
-        <div class="button-col "><button id="button-lowercase " class="newbutton">Lowercase</button></div>
-        <div class="button-col "><button id="button-uppercase newbutton" class="newbutton">Uppercase</button></div>
-        <div class="button-col "><button id="button-numbers newbutton" class="newbutton">Numbers</button></div>
-        <div class="button-col "><button id="button-symbols newbutton" class="newbutton">Symbols</button></div>
+        <div class="button-col "><button id="button-lowercase " class="newbutton">{{lower}}</button></div>
+        <div class="button-col "><button id="button-uppercase newbutton" class="newbutton">{{upper}}</button></div>
+        <div class="button-col "><button id="button-numbers newbutton" class="newbutton">{{num}}</button></div>
+        <div class="button-col "><button id="button-symbols newbutton" class="newbutton">{{sym}}</button></div>
     </div>
 </div>
 <br>
 
-<h6>Password Length:</h6>
+<h6>{{length}}</h6>
 
 <div class="slider">
-    <input type="range" id="password-setting" min="8" max="35">
-    <label for="count"></label>
+    <input type="range" id="password-setting" min="8" max="35" value="^/[a-z]{8}/$" step="1" >
+    <label ></label>
+</div>
+
+<div class="terms">
+    <input id="lastcheck" type="checkbox" v-model="terms">
+    <label >{{check}}</label> : {{terms}}
 </div>
 
 
@@ -48,10 +54,28 @@
 export default {
 data(){
     return{
-        title:"PASSWORD GENERATOR"
+        title:"PASSWORD GENERATOR",
+        copy:"Copy to Clipboard 📋",
+        choose:"Choose your Character set:",
+        length:"Password Length",
+        password:'',
+        upper:"Uppercase",
+        lower:"Lowercase",
+        num:"Numbers",
+        sym:"Symbols",
+        terms:"",
+        check:" checked"
     }
 }
 }
+
+
+
+
+
+
+
+        
 </script>
 
 <style scoped >
@@ -136,6 +160,10 @@ label{
 #myCopy{display: block;
 margin: 0 auto;
 margin-bottom: 20px;}
+
+#lastcheck{
+    display: block;
+}
 
                    @media  (min-width: 768px){
                        h1{

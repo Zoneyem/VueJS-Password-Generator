@@ -2,7 +2,7 @@
   
   
   
-  <PasswordGenerator msg="Welcome to Your Vue.js App"/>
+  <PasswordGenerator />
 </template>
 
 <script>
@@ -10,7 +10,10 @@
 import PasswordGenerator from './components/PassworGenarator.vue'
 
 export default {
-  name: 'App', 
+  name: 'App',
+  props:{
+    
+  } ,
   
   components: {
     PasswordGenerator
@@ -22,6 +25,13 @@ export default {
     }
   }
 }
+
+ 
+
+
+
+
+
 </script>
 
 <style >
