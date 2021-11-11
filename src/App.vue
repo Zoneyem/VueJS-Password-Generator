@@ -2,7 +2,7 @@
   
   
   
-  <PasswordGenerator />
+  <PasswordGenerator welc="Welcome to my first vue App" />
 </template>
 
 <script>
@@ -11,9 +11,7 @@ import PasswordGenerator from './components/PassworGenarator.vue'
 
 export default {
   name: 'App',
-  props:{
-    
-  } ,
+  props:["welc "] ,
   
   components: {
     PasswordGenerator
@@ -23,6 +21,9 @@ export default {
     return{
       
     }
+  },
+  methods:{
+    
   }
 }
 
